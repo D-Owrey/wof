@@ -11,6 +11,7 @@
         </script> 
 
         <!-- JS Entries -->
+        <script src = "./data/scripts/main_window.js"></script>
 
         <!-- CSS Entries -->
         <link rel = "stylesheet" type = "text/css" href = "./gui/css/master.css">
