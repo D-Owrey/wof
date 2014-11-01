@@ -1,0 +1,12 @@
+body { background-color: black; }
+
+#masterContainer {
+    width: 95%;
+    min-width: 800px;
+    height: 600px;
+
+    margin: 0 auto;
+    padding: 10px;
+
+    background-color: darkkhaki;
+}
