@@ -1,5 +1,20 @@
 body { color: white;}
 
+.tileContainer {
+    position: relative;
+}
+
+.abilityPanTile, .characterPanTile {
+    position: absolute;
+    z-index: 10;
+
+    border: 1px solid darkmagenta;
+
+    cursor: pointer;
+
+    background-color: darkolivegreen;
+}
+
 /*==========================
  = Viewport Window Entries =
  ==========================*/
@@ -51,14 +66,6 @@ body { color: white;}
 .characterPanTile {
     width: 99%;
     height: 6%;
-
-    position: absolute;
-
-    border: 1px solid darkmagenta;
-
-    cursor: pointer;
-
-    background-color: darkolivegreen;
 }
 
 #topCharacterPan { top: 0px; }
@@ -134,14 +141,6 @@ body { color: white;}
 .abilityPanTile {
     width: 3%;
     height: 98%;
-
-    position: absolute;
-
-    border: 1px solid darkmagenta;
-
-    cursor: pointer;
-
-    background-color: darkolivegreen;
 }
 
 .abilityTile {

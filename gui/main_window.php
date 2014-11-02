@@ -7,30 +7,29 @@
     <!-- Party List -->
     <div id = "partyWindow">
 
-        <div class = "characterPanTile" id = "topCharacterPan">
-        </div>
-    
-        <?PHP
-            for($i = 0; $i < 20; $i++) {
-        ?>
-                <div class = "characterTile">
-                    <div class = "characterImage">
-                    </div>
-
-                    <div class = "characterTileRight">
-                        <div class = "characterName">
-                            <?= $i ?>
+        <div class = "characterPanTile" id = "topCharacterPan"></div>
+        <div class = "tileContainer" id = "characterContainer" > 
+            <?PHP
+                for($i = 0; $i < 20; $i++) {
+            ?>
+                    <div class = "characterTile">
+                        <div class = "characterImage">
                         </div>
-                        <div class = "characterStats"></div>
+
+                        <div class = "characterTileRight">
+                            <div class = "characterName">
+                                <?= $i ?>
+                            </div>
+                            <div class = "characterStats"></div>
+                        </div>
+
                     </div>
+            <?PHP
+                }
+            ?>
+        </div> <!-- End tileContainer -->
 
-                </div>
-        <?PHP
-            }
-        ?>
-
-        <div class = "characterPanTile" id = "bottomCharacterPan">
-        </div>
+        <div class = "characterPanTile" id = "bottomCharacterPan"></div>
 
     </div>
 
@@ -39,25 +38,27 @@
 
         <div class = "abilityPanTile" id = "leftAbilityPan">
         </div>
+        
+        <div class = "tileContainer" id = "abilityContainer">
+            <?PHP
+                for($i = 0; $i < 20; $i++) {
+            ?>
 
-        <?PHP
-            for($i = 0; $i < 20; $i++) {
-        ?>
+                    <div class = "abilityTile">
+                        <div class = "abilityImage">
+                        </div>
 
-                <div class = "abilityTile">
-                    <div class = "abilityImage">
+                        <div class = "abilityName">
+                            <?= $i ?>
+                        </div>
+
+                        <div class = "abilityStats"></div>
+
                     </div>
-
-                    <div class = "abilityName">
-                        <?= $i ?>
-                    </div>
-
-                    <div class = "abilityStats"></div>
-
-                </div>
-        <?PHP
-            }
-        ?>
+            <?PHP
+                }
+            ?>
+        </div> <!-- End tileContainer -->
 
         <div class = "abilityPanTile" id = "rightAbilityPan">
         </div>
