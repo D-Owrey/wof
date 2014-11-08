@@ -9,7 +9,7 @@
 
         <div id = "battleMap">
             <?PHP
-                for($i = 0; $i < 100; $i++) {
+                for($i = 0; $i < 150; $i++) {
             ?>
                 <div class = "battleMapTestTile">
                     <?= $i ?>

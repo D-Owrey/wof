@@ -1,8 +1,16 @@
 var locked = false; //Spam prevention lock
+var scrolling = false;
+
+var map_scroll_speed = "50";
+
 var partyContainerPosition = 0;
 var abilityContainerPosition = 0;
 
 $(function() {
+/*=============================
+= Party and Ability Container =
+= functions                   =
+=============================*/
 
     $("#upCharacterPan").click(function() { 
         slide_character_container("up"); });
@@ -16,19 +24,32 @@ $(function() {
     $("#rightAbilityPan").click(function() {
         slide_ability_container("right"); });
 
+/*============================
+= Viewport control functions =
+============================*/
 
-    $("#upViewportPan").mouseDown(function() {
-        pan_battle_map("up"); });
+    $("#upViewportPan").mousedown(function() {
+        scrolling = true;
+        pan_battle_map($(this), "up"); });
 
-    $("#rightViewportPan").mouseDown(function() {
-        pan_battle_map("right"); });
+    $("#rightViewportPan").mousedown(function() {
+        scrolling = true;
+        pan_battle_map($(this), "right"); });
 
-    $("#downViewportPan").mouseDown(function() {
-        pan_battle_map("down"); });
+    $("#downViewportPan").mousedown(function() {
+        scrolling = true;
+        pan_battle_map($(this), "down"); });
 
-    $("#leftViewportPan").mouseDown(function() {
-        pan_battle_map("left"); });
+    $("#leftViewportPan").mousedown(function() {
+        scrolling = true;
+        pan_battle_map($(this), "left"); });
 
+    $(".viewportPanTile").mouseup(function() {
+        $(".viewportPanTile").css("background-color", "yellow");
+        $("#battleMap").stop(); });
+
+    $("#viewportWindow").resize(function() {
+        return; }); //FIXME
 });
 
 
@@ -67,7 +88,7 @@ function slide_character_container( direction ) {
 
 
 function slide_ability_container( direction ) {
-    if(locked == true) { return; }
+    if(locked) { return; }
 
     locked = true;
     var pan_amount;
@@ -80,7 +101,7 @@ function slide_ability_container( direction ) {
 
 
 function toggle_cinematic_screen() {
-    if(locked == true) { return; }
+    if(locked) { return; }
 
     locked = true;
 
@@ -93,6 +114,26 @@ function toggle_cinematic_screen() {
 }
 
 
-function pan_battle_map( direction ) {
-    return;
+function pan_battle_map(tileElement, direction ) {
+    if(!scrolling) { $("#battleMap").stop(); }
+    
+    else {
+
+        $(tileElement).css("background-color", "white");
+
+        if(direction == "up")
+            animateObject = { top: "+=" + map_scroll_speed };
+        else if(direction == "right")
+            animateObject = { left: "-=" + map_scroll_speed };
+        else if(direction == "down")
+            animateObject = { top: "-=" + map_scroll_speed };
+        else
+            animateObject = { left: "+=" + map_scroll_speed };
+
+        $("#battleMap").animate(animateObject,
+            "fast", function(){ 
+                        if (scrolling)
+                            pan_battle_map(tileElement, direction);});
+   }
 }
+

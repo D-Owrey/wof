@@ -49,6 +49,7 @@ body { color: white;}
 
 .viewportPanTile {
     position: absolute;
+    z-index: 10;
 
     border: 1px solid black;
 
@@ -71,8 +72,6 @@ body { color: white;}
     margin-top: -60px;
 }
 
-.viewportPanTile:hover { background-color: white; }
-
 #leftViewportPan { margin-left: 5px;}
 
 #upViewportPan { margin-top: 5px;}
@@ -83,8 +82,12 @@ body { color: white;}
 
 
 #battleMap {
-    width: 750px;
+    width: 1125px;
     height: 750px;
+
+    position: relative;
+    top: -50%;
+    left: -50%;
 
     font-size: 0;
 }
