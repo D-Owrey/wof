@@ -23,11 +23,14 @@ body { color: white;}
     width: 75%;
     height: 80%;
 
+    position: relative;
+
     margin: 10px 0 0 10px;
 
     border: 4px solid white;
 
     display: inline-block;
+    overflow: hidden;
 
     background-color: darkgreen;
 }
@@ -41,6 +44,63 @@ body { color: white;}
     border: 1px solid white;
 
     background-color: darkred;
+}
+
+
+.viewportPanTile {
+    position: absolute;
+
+    border: 1px solid black;
+
+    background-color: yellow;
+}
+
+#upViewportPan, #downViewportPan {
+    height: 50px;
+    width: 120px;
+
+    left: 50%;
+    margin-left: -60px;
+}
+
+#leftViewportPan, #rightViewportPan {
+    height: 120px;
+    width: 50px;
+
+    top: 50%;
+    margin-top: -60px;
+}
+
+.viewportPanTile:hover { background-color: white; }
+
+#leftViewportPan { margin-left: 5px;}
+
+#upViewportPan { margin-top: 5px;}
+
+#rightViewportPan { right: 0; margin-right: 5px; }
+
+#downViewportPan { bottom: 0; margin-bottom: 5px; }
+
+
+#battleMap {
+    width: 750px;
+    height: 750px;
+
+    font-size: 0;
+}
+
+.battleMapTestTile {
+    width: 73px;
+    height: 73px;
+
+    display: inline-block;
+
+    border: 1px solid white;
+
+    color: white;
+    background-color: darkviolet;
+
+    font-size: 16;
 }
 
 /*=======================
@@ -68,8 +128,8 @@ body { color: white;}
     height: 6%;
 }
 
-#topCharacterPan { top: 0px; }
-#bottomCharacterPan { bottom: 0px; }
+#upCharacterPan { top: 0px; }
+#downCharacterPan { bottom: 0px; }
 
 .characterTile {
     width: auto;

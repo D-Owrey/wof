@@ -11,7 +11,7 @@
         </script> 
 
         <!-- JS Entries -->
-        <script src = "./data/scripts/main_window.js"></script>
+        <script src = "./data/scripts/wof_battle_ui.js"></script>
 
         <!-- CSS Entries -->
         <link rel = "stylesheet" type = "text/css" href = "./gui/css/master.css">
