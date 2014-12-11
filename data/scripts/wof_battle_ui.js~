@@ -150,7 +150,8 @@ function pan_ui_object(controlElement, affectedElement, direction ) {
             "fast", function(){ 
                         if (scrolling)
                             pan_ui_object(
-                                controlElement, affectedElement, direction);});
+                                controlElement, affectedElement, direction);
+                              });
    }
 }
 
