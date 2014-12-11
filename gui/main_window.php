@@ -1,5 +1,6 @@
 <div id = "masterContainer">
 
+    <div id = "turnCounter">TURN 25</div>
     <!-- Primary Viewport for maps, dialogue, etc -->
     <div id = "viewportWindow">
         <div class = "viewportPanTile" id = "upViewportPan"   ></div>

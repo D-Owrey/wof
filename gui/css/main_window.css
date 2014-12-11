@@ -15,6 +15,15 @@ body { color: white;}
     background-color: darkolivegreen;
 }
 
+#turnCounter { 
+    width: 75%;
+
+    margin: 0 auto;
+
+    background-color: brown;
+    text-align: center; 
+}
+
 /*==========================
  = Viewport Window Entries =
  ==========================*/
@@ -89,8 +98,10 @@ body { color: white;}
     height: 750px;
 
     position: relative;
-    top: -25%;
-    left: -25%;
+    
+    /* Set to zero for map manipulation */
+    top: 0px;
+    left: 0px;
 
     font-size: 0;
 }
@@ -151,7 +162,7 @@ body { color: white;}
 
 .characterImage {
     width: 25%;
-    height: 98%;
+    height: 100%;
 
     display: inline-block;
 
@@ -224,7 +235,7 @@ body { color: white;}
 }
 
 .abilityImage {
-    width: 30%;
+    width: 40%;
     height: 50%;
 
     display: inline-block;
@@ -233,7 +244,7 @@ body { color: white;}
 }
 
 .abilityName {
-    width: 65%;
+    width: 55%;
     height: 50%;
 
     display: inline-block;
